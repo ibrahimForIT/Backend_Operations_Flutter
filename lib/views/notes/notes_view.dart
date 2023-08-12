@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../enums/menu_action.dart';
-import '../services/auth/auth_service.dart';
-import '../services/crud/notes_services.dart';
-import '../constants/routes.dart';
+import '../../enums/menu_action.dart';
+import '../../services/auth/auth_service.dart';
+import '../../services/crud/notes_services.dart';
+import '../../constants/routes.dart';
 
 class NotesView extends StatefulWidget {
   const NotesView({Key? key}) : super(key: key);
@@ -91,6 +91,12 @@ Future<bool> showLogOutDialog(BuildContext context) {
         title: const Text('Sign out'),
         content: const Text('Are you sure you want to sign out?'),
         actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(newNoteRoute);
+            },
+            icon: const Icon(Icons.add),
+          ),
           TextButton(
             onPressed: () {
               Navigator.of(context).pop(false);
