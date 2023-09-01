@@ -41,7 +41,7 @@ class LoadingScreen {
     final overlay = OverlayEntry(
       builder: (context) {
         return Material(
-          color: Colors.black,
+          color: Colors.black.withAlpha(150),
           child: Center(
             child: Container(
               constraints: BoxConstraints(
